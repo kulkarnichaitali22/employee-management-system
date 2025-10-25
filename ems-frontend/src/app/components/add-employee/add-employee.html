@@ -1,0 +1,74 @@
+<section class="add-employee-section d-flex align-items-center justify-content-center">
+  <div class="add-employee-card">
+    <h2 class="mb-4 text-center">Add New Employee</h2>
+
+    <form #f="ngForm" (ngSubmit)="submit(f)" novalidate>
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          [(ngModel)]="model.name"
+          required
+          placeholder="Enter full name"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="model.email"
+          required
+          placeholder="example@email.com"
+        />
+      </div>
+
+      <!-- Department -->
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input
+          type="text"
+          id="department"
+          name="department"
+          class="form-control"
+          [(ngModel)]="model.department"
+          required
+          placeholder="Enter department"
+        />
+      </div>
+
+      <!-- Salary -->
+      <div class="mb-4">
+        <label for="salary" class="form-label">Salary</label>
+        <input
+          type="number"
+          id="salary"
+          name="salary"
+          class="form-control"
+          [(ngModel)]="model.salary"
+          required
+          placeholder="Enter salary amount"
+        />
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-submit" [disabled]="f.invalid">
+          Save Employee
+        </button>
+        <a routerLink="/employees" class="btn btn-cancel">Cancel</a>
+      </div>
+
+      <div class="form-accent"></div>
+
+    </form>
+  </div>
+</section>

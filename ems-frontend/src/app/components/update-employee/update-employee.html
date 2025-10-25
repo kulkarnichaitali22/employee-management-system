@@ -1,0 +1,79 @@
+<section class="update-employee-section d-flex align-items-center justify-content-center">
+  <div class="update-employee-card">
+    <h2 class="mb-4">Update Employee</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          id="name"
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter full name"
+        />
+        <small class="text-warning" *ngIf="f.name.touched && f.name.invalid">Name is required.</small>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Enter email address"
+        />
+        <small class="text-warning" *ngIf="f.email.touched && f.email.errors?.['required']">
+          Email is required.
+        </small>
+        <small class="text-warning" *ngIf="f.email.touched && f.email.errors?.['email']">
+          Enter a valid email.
+        </small>
+      </div>
+
+      <!-- Department -->
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input
+          id="department"
+          type="text"
+          class="form-control"
+          formControlName="department"
+          placeholder="Enter department"
+        />
+        <small class="text-warning" *ngIf="f.department.touched && f.department.invalid">
+          Department is required.
+        </small>
+      </div>
+
+      <!-- Salary -->
+      <div class="mb-4">
+        <label for="salary" class="form-label">Salary</label>
+        <input
+          id="salary"
+          type="number"
+          class="form-control"
+          formControlName="salary"
+          placeholder="Enter salary"
+        />
+        <small class="text-warning" *ngIf="f.salary.touched && f.salary.errors?.['required']">
+          Salary is required.
+        </small>
+        <small class="text-warning" *ngIf="f.salary.touched && f.salary.errors?.['min']">
+          Salary cannot be negative.
+        </small>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-update" [disabled]="form.invalid">
+          Update Employee
+        </button>
+        <a routerLink="/employees" class="btn btn-cancel">Cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
