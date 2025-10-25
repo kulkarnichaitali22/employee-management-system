@@ -12,7 +12,7 @@ This project allows performing full **CRUD operations** (Create, Read, Update, D
 | Page | Screenshot |
 |------|-------------|
 | Dashboard (Employee List) | ![Dashboard Screenshot](assets/screenshots/dashboard.png) |
-| Home Page   | ![Home page Screenshot](assets/screenshots/.png) |
+| Home Page | ![Home Page Screenshot](assets/screenshots/home-page.png) |
 | Add Employee | ![Add Employee Screenshot](assets/screenshots/add-employee.png) |
 | Update Employee | ![Update Employee Screenshot](assets/screenshots/update-employee.png) |
 | View Employee (with shimmer loader) | ![View Employee Screenshot](assets/screenshots/view-employee.png) |
